@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Timeline Studio</p>
+        <h1>Create elegant, story-ready timelines from your spreadsheets.</h1>
+        <p class="hero__subtitle">
+          Upload a CSV or paste rows from Excel/Sheets. Every entry becomes a
+          polished card with an arrow anchored to its date on the timeline.
+        </p>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="panel">
+        <div class="panel__header">
+          <h2>1. Bring in your data</h2>
+          <p>
+            Use column headers <strong>Date</strong>, <strong>Title</strong>,
+            and <strong>Details</strong>. Additional columns are ignored.
+          </p>
+        </div>
+        <div class="panel__controls">
+          <label class="file-input">
+            <input id="fileInput" type="file" accept=".csv" />
+            <span>Upload CSV</span>
+          </label>
+          <button id="loadSample" class="button button--ghost">
+            Load sample data
+          </button>
+        </div>
+        <div class="panel__textarea">
+          <label for="csvInput">Or paste CSV data</label>
+          <textarea
+            id="csvInput"
+            rows="6"
+            placeholder="Date,Title,Details&#10;2024-06-01,Concept kickoff,Define the vision and success metrics."
+          ></textarea>
+          <button id="renderTimeline" class="button">Build timeline</button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="timeline">
+        <div class="timeline__header">
+          <h2>2. Your visual timeline</h2>
+          <p>
+            Each card connects to the date marker on the central line, ready for
+            presentations or reports.
+          </p>
+        </div>
+        <div id="timeline" class="timeline__stream">
+          <div class="timeline__placeholder">
+            <div class="placeholder__icon">⏳</div>
+            <p>Add data to see your timeline.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Tip: Export your spreadsheet as CSV, then drop it here for an instant
+        timeline.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
